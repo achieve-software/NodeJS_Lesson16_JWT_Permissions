@@ -33,7 +33,7 @@ module.exports = {
 
           res.send({
             error: false,
-            token: { accessToken, refreshToken },
+            token: { access:accessToken, refresh: refreshToken },
           });
         } else {
           res.errorStatusCode = 401;
@@ -52,7 +52,7 @@ module.exports = {
   refresh: async (req, res) => {
 
 
-    
+
   },
 
   logout: async (req, res) => {
