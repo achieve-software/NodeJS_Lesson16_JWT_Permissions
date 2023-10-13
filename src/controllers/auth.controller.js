@@ -19,7 +19,7 @@ module.exports = {
             isAdmin: user.isAdmin,
             isLead: user.isLead,
           };
-          const accessToken = jwt.sign(accessData, process.env.SECRET_KEY, {
+          const accessToken = jwt.sign(accessData, process.env.ACCESS_KEY, {
             expiresIn: "30m",
           });
 
@@ -29,6 +29,11 @@ module.exports = {
           };
           const refreshToken = jwt.sign(refreshData, process.env.REFRESH_KEY, {
             expiresIn: "3d",
+          });
+
+          res.send({
+            error: false,
+            token: { accessToken, refreshToken },
           });
         } else {
           res.errorStatusCode = 401;
@@ -43,6 +48,18 @@ module.exports = {
       throw new Error("Please enter username or password");
     }
   },
-  refresh: async (req, res) => {},
-  logout: async (req, res) => {},
+
+  refresh: async (req, res) => {
+
+
+    
+  },
+
+  logout: async (req, res) => {
+    res.send({
+      error: false,
+      message:
+        "No need any doing for logout. You must deleted Bearer Token from your browser.",
+    });
+  },
 };

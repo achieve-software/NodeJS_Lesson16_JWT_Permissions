@@ -69,6 +69,9 @@ app.all("/", (req, res) => {
     isLogin: req.isLogin,
   });
 });
+
+// /auth
+app.use('/auth', require('./src/routes/auth.router'))
 //departments
 app.use("/departments", require("./src/routes/department.router"))
 
