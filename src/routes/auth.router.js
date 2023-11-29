@@ -7,7 +7,7 @@ const router = require('express').Router()
 
 const auth = require('../controllers/auth.controller')
 
-// URL: /auth
+// URL:   /auth
 
 // AuthHome:
 router.all('/', (req, res) => {

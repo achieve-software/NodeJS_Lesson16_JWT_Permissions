@@ -35,6 +35,7 @@ module.exports = async function(userData, withRefresh = true) {
                 const accessToken = jwt.sign(accessData, process.env.ACCESS_KEY, { expiresIn: '10m' })
     
                 const refreshData = {
+
                     username: user.username,
                     password: user.password
                 }
@@ -42,7 +43,8 @@ module.exports = async function(userData, withRefresh = true) {
     
                 return {
                     error: false,
-                    token: {
+                    token: 
+                    {
                         access: accessToken,
                         refresh: refreshToken
                     }
