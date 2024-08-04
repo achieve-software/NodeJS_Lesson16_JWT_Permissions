@@ -88,7 +88,7 @@ app.use(require('./src/middlewares/authentication'))
 // HomePath:
 app.all("/", (req, res) => {
   res.send({
-    error: true,
+    error: false,
     message: "Welcome to PERSONNEL API",
     session: req.session,
     isLogin: req.isLogin,
