@@ -12,8 +12,8 @@ const auth = require('../controllers/auth.controller')
 // AuthHome:
 router.all('/', (req, res) => {
     res.send({
-        login: '/auth/login/',
-        refresh: '/auth/refresh/',
+        // login: '/auth/login/',
+        // refresh: '/auth/refresh/',
     })
 })
 
